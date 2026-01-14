@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', Impact, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Workers Orange Underline for Logo */
+.workers-logo-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.workers-logo-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 20%;
+  height: 4px;
+  background-color: currentColor;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF6B00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E55D00;
+}
+
+/* Button styles */
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-workers-orange text-white font-bold rounded-lg 
+           hover:bg-workers-orange-light transition-all duration-300
+           hover:shadow-lg hover:shadow-workers-orange/30 hover:scale-105
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-workers-orange text-workers-orange font-bold rounded-lg
+           hover:bg-workers-orange hover:text-white transition-all duration-300;
+  }
+
+  .btn-white {
+    @apply px-8 py-4 bg-white text-workers-orange font-bold rounded-lg
+           hover:bg-gray-100 transition-all duration-300
+           hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-workers-orange focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .input-field-dark {
+    @apply w-full px-4 py-3 bg-dark-light border border-gray-700 rounded-lg text-white
+           placeholder:text-gray-400
+           focus:outline-none focus:ring-2 focus:ring-workers-orange focus:border-transparent
+           transition-all duration-200;
+  }
+}
+
+/* Gradient backgrounds */
+.bg-gradient-orange {
+  background: linear-gradient(135deg, #FF6B00 0%, #FF8533 50%, #FFA366 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #0066CC 0%, #3385D6 100%);
+}
+
+/* Text shadow for hero */
+.text-shadow {
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.15);
+}
+
+/* Animation delays for staggered animations */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse-orange {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
+  }
+}
+
+.pulse-orange {
+  animation: pulse-orange 2s infinite;
+}
+
+/* Mobile bottom bar safe area */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+

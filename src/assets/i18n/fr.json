@@ -1,0 +1,22 @@
+{
+  "common": {
+    "phone": "01 80 906 600",
+    "email": "call@workers-paris.fr",
+    "address": "58 avenue Wagram, 75017 Paris",
+    "siret": "934 562 331 00017",
+    "cta_quote": "Demander un devis",
+    "cta_contact": "Nous contacter",
+    "available_24_7": "Disponible 24/7"
+  },
+  "services": {
+    "front_desk": "Front Desk",
+    "housekeeping": "Housekeeping",
+    "catering": "Catering"
+  },
+  "home": {
+    "hero_title": "WORKERS",
+    "hero_subtitle": "Front desk – Housekeeping – Catering",
+    "hero_slogan": "YOUR BUSINESS SUPPORT SERVICE"
+  }
+}
+
