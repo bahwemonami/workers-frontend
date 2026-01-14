@@ -57,10 +57,11 @@ import { ApiService } from '../../core/services/api.service';
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     @for (service of serviceOptions; track service.value) {
                       <div 
+                        [ngClass]="{
+                          'border-workers-orange bg-workers-orange/5': form.serviceTypes.includes(service.value),
+                          'border-gray-200': !form.serviceTypes.includes(service.value)
+                        }"
                         class="flex items-center gap-3 sm:gap-4 p-4 sm:p-6 border-2 rounded-xl cursor-pointer transition-all hover:border-workers-orange/50"
-                        [class.border-workers-orange]="form.serviceTypes.includes(service.value)"
-                        [class.bg-workers-orange/5]="form.serviceTypes.includes(service.value)"
-                        [class.border-gray-200]="!form.serviceTypes.includes(service.value)"
                         (click)="toggleService(service.value)">
                         <input 
                           type="checkbox" 
@@ -68,8 +69,7 @@ import { ApiService } from '../../core/services/api.service';
                           [checked]="form.serviceTypes.includes(service.value)"
                           (change)="toggleService(service.value)"
                           class="w-5 h-5 accent-workers-orange flex-shrink-0"
-                          [attr.aria-label]="'Sélectionner ' + service.label"
-                        />
+                          [attr.aria-label]="'Sélectionner ' + service.label" />
                         <div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                           @if (service.value === 'front-desk') {
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-workers-orange flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
