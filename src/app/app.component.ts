@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { BottomBarComponent } from './shared/components/bottom-bar/bottom-bar.component';
@@ -28,5 +29,15 @@ import { NewsletterPopupComponent } from './shared/components/newsletter-popup/n
     <app-newsletter-popup />
   `
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  private router = inject(Router);
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+  }
+}
 
