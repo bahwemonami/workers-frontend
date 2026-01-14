@@ -1,12 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { ApiService } from '../../core/services/api.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   template: `
     <!-- Hero -->
     <section class="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 bg-gradient-orange">
@@ -29,26 +30,28 @@ import { ApiService } from '../../core/services/api.service';
             @if (!submitted()) {
               <form (submit)="submitForm($event)" class="space-y-4 sm:space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Prénom *</label>
-                    <input 
-                      type="text" 
-                      [(ngModel)]="form.firstName" 
-                      name="firstName"
-                      required
-                      class="input-field"
-                    />
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Nom *</label>
-                    <input 
-                      type="text" 
-                      [(ngModel)]="form.lastName" 
-                      name="lastName"
-                      required
-                      class="input-field"
-                    />
-                  </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Prénom *</label>
+                  <input 
+                    type="text" 
+                    [(ngModel)]="form.firstName" 
+                    name="firstName"
+                    required
+                    class="input-field"
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Nom *</label>
+                  <input 
+                    type="text" 
+                    [(ngModel)]="form.lastName" 
+                    name="lastName"
+                    required
+                    class="input-field"
+                    autocomplete="family-name"
+                  />
+                </div>
                 </div>
 
                 <div>
@@ -59,6 +62,7 @@ import { ApiService } from '../../core/services/api.service';
                     name="email"
                     required
                     class="input-field"
+                    autocomplete="email"
                   />
                 </div>
 
@@ -70,6 +74,7 @@ import { ApiService } from '../../core/services/api.service';
                     name="phone"
                     required
                     class="input-field"
+                    autocomplete="tel"
                   />
                 </div>
 
@@ -81,6 +86,7 @@ import { ApiService } from '../../core/services/api.service';
                     name="establishment"
                     class="input-field"
                     placeholder="Nom de votre établissement"
+                    autocomplete="organization"
                   />
                 </div>
 
@@ -113,9 +119,10 @@ import { ApiService } from '../../core/services/api.service';
                     [(ngModel)]="rgpdAccepted" 
                     name="rgpd"
                     required
-                    class="mt-1"
+                    class="mt-1 w-4 h-4 accent-workers-orange flex-shrink-0"
+                    id="contact-rgpd-checkbox"
                   />
-                  <label class="text-sm text-gray-600">
+                  <label for="contact-rgpd-checkbox" class="text-sm text-gray-600 leading-relaxed">
                     J'accepte que mes données soient utilisées pour me recontacter.
                     <a routerLink="/legal/privacy" class="text-workers-orange underline">
                       Politique de confidentialité

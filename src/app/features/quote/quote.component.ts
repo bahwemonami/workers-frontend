@@ -155,6 +155,7 @@ import { ApiService } from '../../core/services/api.service';
                       name="establishment"
                       class="input-field text-base"
                       placeholder="Nom de votre établissement"
+                      autocomplete="organization"
                     />
                   </div>
                 </div>
@@ -174,6 +175,7 @@ import { ApiService } from '../../core/services/api.service';
                         name="firstName"
                         required
                         class="input-field text-base"
+                        autocomplete="given-name"
                       />
                     </div>
                     <div>
@@ -184,6 +186,7 @@ import { ApiService } from '../../core/services/api.service';
                         name="lastName"
                         required
                         class="input-field text-base"
+                        autocomplete="family-name"
                       />
                     </div>
                   </div>

@@ -40,6 +40,7 @@ import { ApiService } from '../../../core/services/api.service';
                   placeholder="votre@email.com"
                   required
                   class="input-field"
+                  autocomplete="email"
                 />
                 <button type="submit" class="btn-primary w-full" [disabled]="loading()">
                   @if (loading()) {
