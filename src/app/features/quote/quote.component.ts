@@ -56,7 +56,12 @@ import { ApiService } from '../../core/services/api.service';
                   <h2 class="text-xl sm:text-2xl font-heading text-dark mb-4 sm:mb-6 px-2">TYPE DE BESOIN</h2>
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     @for (service of serviceOptions; track service.value) {
-                      <div class="flex items-center gap-3 sm:gap-4 p-4 sm:p-6 border-2 rounded-xl cursor-pointer transition-all hover:border-workers-orange/50" [class.border-workers-orange]="form.serviceTypes.includes(service.value)" [class.bg-workers-orange/5]="form.serviceTypes.includes(service.value)" [class.border-gray-200]="!form.serviceTypes.includes(service.value)" (click)="toggleService(service.value)">
+                      <div 
+                        class="flex items-center gap-3 sm:gap-4 p-4 sm:p-6 border-2 rounded-xl cursor-pointer transition-all hover:border-workers-orange/50"
+                        [class.border-workers-orange]="form.serviceTypes.includes(service.value)"
+                        [class.bg-workers-orange/5]="form.serviceTypes.includes(service.value)"
+                        [class.border-gray-200]="!form.serviceTypes.includes(service.value)"
+                        (click)="toggleService(service.value)">
                         <input 
                           type="checkbox" 
                           [value]="service.value"
