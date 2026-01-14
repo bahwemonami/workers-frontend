@@ -8,23 +8,23 @@ import { RouterLink } from '@angular/router';
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero -->
-    <section class="pt-32 pb-16 bg-gradient-orange">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-5xl md:text-6xl font-heading text-white mb-4">
+    <section class="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 bg-gradient-orange">
+      <div class="container mx-auto px-4 sm:px-6 text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-3 sm:mb-4 px-2">
           VOTRE PARTENAIRE HÔTELIER
         </h1>
-        <p class="text-xl text-white/90">
+        <p class="text-base sm:text-lg md:text-xl text-white/90 px-2">
           Workers, spécialiste du staffing hôtelier depuis notre création
         </p>
       </div>
     </section>
 
     <!-- Mission -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4">
+    <section class="py-12 sm:py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-4xl font-heading text-dark mb-6">NOTRE MISSION</h2>
-          <p class="text-lg text-gray-600 leading-relaxed">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading text-dark mb-4 sm:mb-6 px-2">NOTRE MISSION</h2>
+          <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed px-2">
             Fournir aux hôtels et établissements d'accueil du personnel qualifié, formé et immédiatement opérationnel. 
             Nous comprenons les exigences du secteur hôtelier et nous nous engageons à vous accompagner avec réactivité et professionnalisme.
           </p>
@@ -33,19 +33,19 @@ import { RouterLink } from '@angular/router';
     </section>
 
     <!-- Values -->
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-heading text-dark text-center mb-12">NOS VALEURS</h2>
+    <section class="py-12 sm:py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading text-dark text-center mb-8 sm:mb-12 px-2">NOS VALEURS</h2>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-2xl shadow-sm card-hover border border-gray-100">
-            <div class="w-12 h-12 bg-workers-orange/10 rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-workers-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div class="bg-white p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-sm card-hover border border-gray-100">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-workers-orange/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-workers-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 class="text-xl font-heading text-dark mb-3">RÉACTIVITÉ</h3>
-            <p class="text-gray-600">Disponibilité 24/7 pour répondre à vos besoins, même en urgence.</p>
+            <h3 class="text-lg sm:text-xl font-heading text-dark mb-2 sm:mb-3">RÉACTIVITÉ</h3>
+            <p class="text-sm sm:text-base text-gray-600">Disponibilité 24/7 pour répondre à vos besoins, même en urgence.</p>
           </div>
           <div class="bg-white p-8 rounded-2xl shadow-sm card-hover border border-gray-100">
             <div class="w-12 h-12 bg-workers-orange/10 rounded-xl flex items-center justify-center mb-4">
@@ -97,17 +97,17 @@ import { RouterLink } from '@angular/router';
     </section>
 
     <!-- Why Us -->
-    <section class="py-20 bg-workers-blue text-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-heading text-center mb-12">POURQUOI NOUS CHOISIR</h2>
+    <section class="py-12 sm:py-16 md:py-20 bg-workers-blue text-white">
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading text-center mb-8 sm:mb-12 px-2">POURQUOI NOUS CHOISIR</h2>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           @for (item of whyUs; track item) {
             <div class="flex items-start gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-workers-orange flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span class="text-white/90">{{ item }}</span>
+              <span class="text-white/90 text-sm sm:text-base">{{ item }}</span>
             </div>
           }
         </div>
@@ -115,19 +115,19 @@ import { RouterLink } from '@angular/router';
     </section>
 
     <!-- CTA -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-heading text-dark mb-6">
+    <section class="py-12 sm:py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading text-dark mb-4 sm:mb-6 px-2">
           PRÊT À RENFORCER VOS ÉQUIPES ?
         </h2>
-        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p class="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
           Contactez-nous dès maintenant pour discuter de vos besoins en personnel hôtelier.
         </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a routerLink="/quote" class="btn-primary">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-4">
+          <a routerLink="/quote" class="btn-primary w-full sm:w-auto text-center py-3 px-6 text-sm sm:text-base">
             Demander un devis gratuit
           </a>
-          <a href="tel:+33180906600" class="btn-secondary flex items-center gap-2" aria-label="Appeler le 01 80 906 600">
+          <a href="tel:+33180906600" class="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto py-3 px-6 text-sm sm:text-base" aria-label="Appeler le 01 80 906 600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>

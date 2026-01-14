@@ -14,27 +14,27 @@ interface FAQ {
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero -->
-    <section class="pt-32 pb-16 bg-gradient-orange">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-5xl md:text-6xl font-heading text-white mb-4">
+    <section class="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 bg-gradient-orange">
+      <div class="container mx-auto px-4 sm:px-6 text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-3 sm:mb-4 px-2">
           QUESTIONS FRÉQUENTES
         </h1>
-        <p class="text-xl text-white/90">
+        <p class="text-base sm:text-lg md:text-xl text-white/90 px-2">
           Toutes les réponses à vos questions
         </p>
       </div>
     </section>
 
     <!-- FAQ Content -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4">
+    <section class="py-12 sm:py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6">
         <div class="max-w-3xl mx-auto">
           <!-- Category Tabs -->
-          <div class="flex flex-wrap gap-2 mb-12 justify-center">
+          <div class="flex flex-wrap gap-2 mb-8 sm:mb-12 justify-center px-2">
             @for (cat of categories; track cat.key) {
               <button 
                 (click)="activeCategory.set(cat.key)"
-                class="px-6 py-2 rounded-full font-medium transition-all"
+                class="px-4 py-1.5 sm:px-6 sm:py-2 rounded-full font-medium transition-all text-xs sm:text-sm"
                 [class.bg-workers-orange]="activeCategory() === cat.key"
                 [class.text-white]="activeCategory() === cat.key"
                 [class.bg-gray-100]="activeCategory() !== cat.key"
@@ -45,25 +45,26 @@ interface FAQ {
           </div>
 
           <!-- FAQs -->
-          <div class="space-y-4">
+          <div class="space-y-3 sm:space-y-4">
             @for (faq of filteredFAQs(); track faq.question) {
               <div class="border border-gray-200 rounded-xl overflow-hidden">
                 <button 
                   (click)="toggleFAQ(faq)"
-                  class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
-                  <span class="font-medium text-dark pr-4">{{ faq.question }}</span>
+                  class="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-gray-50 transition-colors gap-3">
+                  <span class="font-medium text-dark text-sm sm:text-base pr-2 sm:pr-4 flex-1">{{ faq.question }}</span>
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    class="h-5 w-5 text-workers-orange transition-transform"
+                    class="h-5 w-5 text-workers-orange transition-transform flex-shrink-0"
                     [class.rotate-180]="faq.isOpen"
                     fill="none" 
                     viewBox="0 0 24 24" 
-                    stroke="currentColor">
+                    stroke="currentColor"
+                    aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
                 @if (faq.isOpen) {
-                  <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                  <div class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-gray-600 leading-relaxed border-t border-gray-100 pt-3 sm:pt-4">
                     {{ faq.answer }}
                   </div>
                 }
@@ -73,18 +74,18 @@ interface FAQ {
         </div>
 
         <!-- CTA -->
-        <div class="max-w-3xl mx-auto mt-16 text-center bg-workers-blue rounded-2xl p-8">
-          <h2 class="text-2xl font-heading text-white mb-4">
+        <div class="max-w-3xl mx-auto mt-12 sm:mt-16 text-center bg-workers-blue rounded-xl sm:rounded-2xl p-6 sm:p-8">
+          <h2 class="text-xl sm:text-2xl font-heading text-white mb-3 sm:mb-4 px-2">
             VOUS AVEZ D'AUTRES QUESTIONS ?
           </h2>
-          <p class="text-white/80 mb-6">
+          <p class="text-sm sm:text-base text-white/80 mb-4 sm:mb-6 px-2">
             Notre équipe est disponible 24/7 pour vous répondre
           </p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a routerLink="/contact" class="btn-white">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-4">
+            <a routerLink="/contact" class="btn-white w-full sm:w-auto text-center py-3 px-6 text-sm sm:text-base">
               Nous contacter
             </a>
-            <a href="tel:+33180906600" class="text-white font-bold hover:underline flex items-center gap-2" aria-label="Appeler le 01 80 906 600">
+            <a href="tel:+33180906600" class="text-white font-bold hover:underline flex items-center justify-center gap-2 w-full sm:w-auto py-3 px-6 text-sm sm:text-base" aria-label="Appeler le 01 80 906 600">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>

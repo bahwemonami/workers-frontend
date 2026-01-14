@@ -19,54 +19,54 @@ interface ServiceDetail {
   template: `
     @if (service) {
       <!-- Hero -->
-      <section class="pt-32 pb-16 bg-gradient-orange">
-        <div class="container mx-auto px-4 text-center">
-          <div class="mb-4">
+      <section class="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 bg-gradient-orange">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+          <div class="mb-3 sm:mb-4">
             @if (service.slug === 'front-desk') {
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 sm:h-20 sm:w-20 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             } @else if (service.slug === 'housekeeping') {
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 sm:h-20 sm:w-20 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             } @else {
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 sm:h-20 sm:w-20 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
               </svg>
             }
           </div>
-          <h1 class="text-5xl md:text-6xl font-heading text-white mb-4">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-3 sm:mb-4 px-2">
             {{ service.title }}
           </h1>
-          <p class="text-xl text-white/90 max-w-2xl mx-auto">
+          <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto px-2">
             {{ service.description }}
           </p>
         </div>
       </section>
 
       <!-- Content -->
-      <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+      <section class="py-12 sm:py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-4xl mx-auto">
             <!-- Description -->
-            <div class="mb-12">
-              <h2 class="text-3xl font-heading text-dark mb-6">À PROPOS</h2>
-              <p class="text-lg text-gray-600 leading-relaxed">
+            <div class="mb-8 sm:mb-12">
+              <h2 class="text-2xl sm:text-3xl font-heading text-dark mb-4 sm:mb-6 px-2">À PROPOS</h2>
+              <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed px-2">
                 {{ service.longDescription }}
               </p>
             </div>
 
             <!-- Features -->
-            <div class="mb-12">
-              <h2 class="text-3xl font-heading text-dark mb-6">CE QUE NOUS PROPOSONS</h2>
-              <div class="grid md:grid-cols-2 gap-4">
+            <div class="mb-8 sm:mb-12">
+              <h2 class="text-2xl sm:text-3xl font-heading text-dark mb-4 sm:mb-6 px-2">CE QUE NOUS PROPOSONS</h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 @for (feature of service.features; track feature) {
-                  <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-workers-orange flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <div class="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-workers-orange flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span class="text-gray-700">{{ feature }}</span>
+                    <span class="text-sm sm:text-base text-gray-700">{{ feature }}</span>
                   </div>
                 }
               </div>
@@ -74,11 +74,11 @@ interface ServiceDetail {
 
             <!-- Software -->
             @if (service.software.length > 0) {
-              <div class="mb-12">
-                <h2 class="text-3xl font-heading text-dark mb-6">LOGICIELS MAÎTRISÉS</h2>
-                <div class="flex flex-wrap gap-3">
+              <div class="mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-heading text-dark mb-4 sm:mb-6 px-2">LOGICIELS MAÎTRISÉS</h2>
+                <div class="flex flex-wrap gap-2 sm:gap-3 px-2">
                   @for (sw of service.software; track sw) {
-                    <span class="px-4 py-2 bg-workers-orange/10 text-workers-orange rounded-full font-medium">
+                    <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-workers-orange/10 text-workers-orange rounded-full font-medium text-xs sm:text-sm">
                       {{ sw }}
                     </span>
                   }
@@ -87,18 +87,18 @@ interface ServiceDetail {
             }
 
             <!-- CTA -->
-            <div class="bg-workers-blue rounded-2xl p-8 text-center">
-              <h3 class="text-2xl font-heading text-white mb-4">
+            <div class="bg-workers-blue rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center">
+              <h3 class="text-xl sm:text-2xl font-heading text-white mb-3 sm:mb-4 px-2">
                 BESOIN DE PERSONNEL {{ service.title }} ?
               </h3>
-              <p class="text-white/80 mb-6">
+              <p class="text-sm sm:text-base text-white/80 mb-4 sm:mb-6 px-2">
                 Obtenez un devis personnalisé en quelques minutes
               </p>
-              <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a routerLink="/quote" class="btn-white">
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-4">
+                <a routerLink="/quote" class="btn-white w-full sm:w-auto text-center py-3 px-6 text-sm sm:text-base">
                   Demander un devis
                 </a>
-                <a href="tel:+33180906600" class="text-white font-bold hover:underline flex items-center gap-2" aria-label="Appeler le 01 80 906 600">
+                <a href="tel:+33180906600" class="text-white font-bold hover:underline flex items-center justify-center gap-2 w-full sm:w-auto py-3 px-6 text-sm sm:text-base" aria-label="Appeler le 01 80 906 600">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
@@ -111,23 +111,23 @@ interface ServiceDetail {
       </section>
 
       <!-- Other Services -->
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-3xl font-heading text-dark mb-8">NOS AUTRES SERVICES</h2>
-          <div class="flex flex-wrap justify-center gap-4">
+      <section class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+          <h2 class="text-2xl sm:text-3xl font-heading text-dark mb-6 sm:mb-8 px-2">NOS AUTRES SERVICES</h2>
+          <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
             @for (s of otherServices; track s.slug) {
               <a [routerLink]="['/services', s.slug]" 
-                 class="px-6 py-3 bg-white border-2 border-gray-200 rounded-lg hover:border-workers-orange transition-colors">
+                 class="px-4 py-2 sm:px-6 sm:py-3 bg-white border-2 border-gray-200 rounded-lg hover:border-workers-orange transition-colors text-sm sm:text-base">
                 @if (s.slug === 'front-desk') {
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 inline mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 } @else if (s.slug === 'housekeeping') {
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 inline mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                 } @else {
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 inline mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                   </svg>
                 }
