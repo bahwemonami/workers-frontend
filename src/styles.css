@@ -20,7 +20,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Oswald', Impact, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -64,29 +69,19 @@ h1, h2, h3, h4, h5, h6 {
 /* Button styles */
 @layer components {
   .btn-primary {
-    @apply px-8 py-4 bg-workers-orange text-white font-bold rounded-lg 
-           hover:bg-workers-orange-light transition-all duration-300
-           hover:shadow-lg hover:shadow-workers-orange/30 hover:scale-105
-           active:scale-95;
+        @apply px-10 py-5 bg-workers-orange text-white font-bold rounded-lg text-lg hover:bg-workers-orange-light transition-all duration-300 hover:shadow-lg hover:shadow-workers-orange/30 hover:scale-105 active:scale-95;
   }
 
   .btn-secondary {
-    @apply px-8 py-4 border-2 border-workers-orange text-workers-orange font-bold rounded-lg
-           hover:bg-workers-orange hover:text-white transition-all duration-300;
+        @apply px-10 py-5 border-2 border-workers-orange text-workers-orange font-bold rounded-lg text-lg hover:bg-workers-orange hover:text-white transition-all duration-300;
   }
 
   .btn-white {
-    @apply px-8 py-4 bg-white text-workers-orange font-bold rounded-lg
-           hover:bg-gray-100 transition-all duration-300
-           hover:shadow-lg hover:scale-105 active:scale-95;
+        @apply px-10 py-5 bg-white text-workers-orange font-bold rounded-lg text-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg
-           focus:outline-none focus:ring-2 focus:ring-workers-orange focus:border-transparent
-           transition-all duration-200
-           text-base
-           bg-white;
+        @apply w-full px-5 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-workers-orange focus:border-transparent transition-all duration-200 text-lg bg-white;
   }
 
   .input-field:disabled {
@@ -94,16 +89,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   textarea.input-field {
-    @apply resize-y min-h-[100px];
+        @apply resize-y min-h-[120px];
   }
 
   select.input-field {
     @apply appearance-none bg-white cursor-pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
-    background-position: right 0.5rem center;
+        background-position: right 0.75rem center;
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
-    padding-right: 2.5rem;
+        padding-right: 3rem;
   }
 
   select.input-field:focus {
@@ -112,17 +107,15 @@ h1, h2, h3, h4, h5, h6 {
   
   @media (max-width: 640px) {
     .input-field {
-      @apply text-base;
-      font-size: 16px; /* Prevents zoom on iOS */
+            @apply text-lg;
+            font-size: 18px;
+            /* Prevents zoom on iOS */
     }
   }
 
-  .input-field-dark {
-    @apply w-full px-4 py-3 bg-dark-light border border-gray-700 rounded-lg text-white
-           placeholder:text-gray-400
-           focus:outline-none focus:ring-2 focus:ring-workers-orange focus:border-transparent
-           transition-all duration-200;
-  }
+    .input-field-dark {
+        @apply w-full px-5 py-4 bg-dark-light border border-gray-700 rounded-lg text-white text-lg placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-workers-orange focus:border-transparent transition-all duration-200;
+    }
 }
 
 /* Gradient backgrounds */
@@ -150,11 +143,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Animation delays for staggered animations */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-400 {
+    animation-delay: 400ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
+}
 
 /* Fade in animation */
 @keyframes fadeInUp {
@@ -162,6 +169,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -174,9 +182,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Pulse animation for CTA */
 @keyframes pulse-orange {
-  0%, 100% {
+
+    0%,
+    100% {
     box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.4);
   }
+
   50% {
     box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
   }
@@ -191,3 +202,19 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: env(safe-area-inset-bottom, 20px);
 }
 
+/* Subtle pulse animation for CTA phone number */
+@keyframes pulse-subtle {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+}
+
+.animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+}
